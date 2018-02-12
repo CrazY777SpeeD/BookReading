@@ -1,0 +1,23 @@
+﻿@{
+    ViewBag.Title = "Details";
+}
+@using BookReading.Models
+@model Author
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<fieldset>
+    <h2>Автор</h2>
+
+    <h3>@Html.DisplayNameFor(model => model.Name): @Html.DisplayFor(model => model.Name)</h3>
+
+    <b>
+        @Html.DisplayNameFor(model => model.Age):
+    </b>
+    <span>
+        @Html.DisplayFor(model => model.Age)
+    </span>
+</fieldset>
+<p>
+    @Html.ActionLink("Back to List", "List") |
+</p>
