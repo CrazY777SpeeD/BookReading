@@ -83,17 +83,17 @@ namespace BookReading.Controllers
         public ActionResult CreateBook()
         {
             var book = new Book();
-            SelectList authors = new SelectList(_bookContext.GetAuthors(), "Author", "Name");
+            SelectList authors = new SelectList(_bookContext.GetAuthors(), "Id", "Name");
             ViewBag.Authors = authors;
             return View(book);
         }
 
         [HttpPost]
-        public ActionResult CreateBook(Book book)
+        public ActionResult CreateBook(Book book, string Id)
         {
             if (ModelState.IsValid && !string.IsNullOrEmpty(book.Title))
             {
-                book.AuthorId = 0;
+                book.AuthorId = Convert.ToInt32(Id);
                 _bookContext.AddBook(book);
             }
             else

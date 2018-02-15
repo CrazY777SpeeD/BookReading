@@ -34,9 +34,9 @@ namespace BookReading.Models
         {
             return new Author { };
         }
-        public List<string> GetAuthors()
+        public List<Author> GetAuthors()
         {
-            return new List<string>();
+            return new List<Author>();
         }
 
 	    public Book Update(Book newBookData)

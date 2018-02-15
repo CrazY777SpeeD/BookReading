@@ -42,12 +42,12 @@ namespace BookReading.Models
                 return query.ToList();
             }
         }
-        public List<string> GetAuthors()
+        public List<Author> GetAuthors()
         {
             using (var db = new Database())
             {
                 var query = (from b in db.Author
-                             select b.Name);
+                             select b);
                 return query.ToList();
             }
         }

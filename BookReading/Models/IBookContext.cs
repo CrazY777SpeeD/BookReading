@@ -11,7 +11,7 @@ namespace BookReading.Models
         List<Book> GetRange(int from, int to);
         Book GetBook(int bookId);
         Author GetAuthor(int id);
-        List<string> GetAuthors();
+        List<Author> GetAuthors();
         Book Update(Book newBookData);
     }
 }
